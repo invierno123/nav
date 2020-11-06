@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <title>前端导航</title>
+    <style type="text/css">
+        .icon {
+           width: 1em; height: 1em;
+           vertical-align: -0.15em;
+           fill: currentColor;
+           overflow: hidden;
+        }
+    </style>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -27,13 +35,18 @@
             </li>
             <li>
                 <div class="addButton">
-                    <div class="icon">
-                        <div class="text">新增网站</div>
+                    <div class="icon-wrapper">
+                        <svg class="icon" >
+                            <use xlink:href="#icon-jia"></use>
+                        </svg> 
                     </div> 
+                        <div class="text">新增网站</div>
+                   
                 </div>
             </li>
         </ul>
     </main>
+    <script src="//at.alicdn.com/t/font_2184378_hvukz9lc81.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
