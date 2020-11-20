@@ -6,34 +6,21 @@ const hashMap = xObject||[{logo:'A',logoType:'text',url:'https://www.acfun.cn'},
  
 const simplifyUrl=(url)=>{
     return url.replace("https://",'')
-    .replace('http://','')
-    .replace('www.','')
-    .replace(/\/.*/,'')//删除/开头结尾内容
+    .replace(searchValue: "http://",replaceValue: '').replace(searchValue: "www.",replaceValue: '')
 }
 
 
  const render = ()=>{
     $siteList.find('li:not(.last)').remove() 
-    hashMap.forEach((node,index)=>{
+    hashMap.forEach(node=>{
      const $li = $(`<li>
+     <a href="${node.url}">
          <div class="site">
              <div class="logo">${node.logo[0]}</div>
              <div class="link">${simplifyUrl(node.url)}</div>
-             <div class="close">
-             <svg class="icon">
-                 <use xlink:href="#icon-close"></use>
-             </svg>
-             </div>
          </div>
+     </a>
   </li>`).insertBefore($lastLi)
-  $li.on('click',()=>{
-      window.open(node.url)
-  })
-  $li.on('click','.close',(e)=>{
-      e.stopPropagation()
-      hashMap.splice(index,1)
-      render()
-  })
  })
 }
 render()
@@ -43,7 +30,7 @@ render()
         url = 'https://' + url 
         
     }
-    hashMap.push({logo:simplifyUrl(url)[0].toUpperCase(),logoType:'text',url:url})
+    hashMap.push({logo:url[0],logoType:'text',url:url})
     
    render()
 })

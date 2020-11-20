@@ -14,7 +14,7 @@ const simplifyUrl=(url)=>{
 
  const render = ()=>{
     $siteList.find('li:not(.last)').remove() 
-    hashMap.forEach((node,index)=>{
+    hashMap.forEach(node=>{
      const $li = $(`<li>
          <div class="site">
              <div class="logo">${node.logo[0]}</div>
@@ -31,8 +31,6 @@ const simplifyUrl=(url)=>{
   })
   $li.on('click','.close',(e)=>{
       e.stopPropagation()
-      hashMap.splice(index,1)
-      render()
   })
  })
 }

@@ -32,7 +32,6 @@ const simplifyUrl=(url)=>{
   $li.on('click','.close',(e)=>{
       e.stopPropagation()
       hashMap.splice(index,1)
-      render()
   })
  })
 }
