@@ -31,6 +31,13 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.siteList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
 .searchForm > input {
   width: 100%;
   margin-right: 10px;
@@ -48,19 +55,19 @@ body {
   color: white;
   font-size: 16px;
 }
-.siteList {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 20px;
+.globalMain {
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
 }
+
 .siteList > li {
   margin-bottom: 10px;
 }
 .siteList .site {
   /*注意.siteList和.site之间的空格*/
   border: 1px solid green;
-  width: 160px;
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,6 +77,7 @@ body {
   border-radius: 4px;
   padding: 20px 0;
   position: relative;
+  cursor: pointer;
 }
 .siteList .site > .logo {
   width: 64px;
@@ -87,9 +95,14 @@ body {
   position: absolute;
   right: 10px;
   top: 5px;
+  display: none;
+}
+.siteList .site:hover > .close {
+  display: block;
+  cursor: default;
 }
 .siteList .addButton {
-  width: 160px;
+  width: 150px;
   background: white;
   display: flex;
   justify-content: center;
@@ -108,4 +121,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (min-width: 500px) {
+  /* 媒体查询相当于if..else判断 -pc*/
+  .searchForm {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .siteList {
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-right: -20px;
+  }
+  .globalHeader {
+    margin: 60px 0 100px;
+  }
+  .siteList > li {
+    margin-right: 25px;
+  }
 }
