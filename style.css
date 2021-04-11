@@ -22,19 +22,41 @@ img {
   max-width: 100%;
 }
 body {
-  background: url("images/img.png") no-repeat;
+  background: url("images/img_2.png") no-repeat;
   background-size: cover;
   height: 100vh;
   margin: 0;
   padding: 0;
 }
+
+.search {
+  /*百度和Google的样式设置*/
+  width: 70px;
+
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.searchList {
+  display: flex;
+
+}
+.search:first-child {
+  color: black;
+}
+.search:nth-child(2) {
+
+  color: #fff;
+}
 .globalHeader {
-  margin: 20px;
+  margin-top: 20px;
+
 }
 .searchForm {
   display: flex;
-
   justify-content: space-between;
+
 }
 .siteList {
   display: flex;
@@ -46,20 +68,30 @@ body {
 .searchForm > input {
   outline: none;
   width: 100%;
-  margin-right: 10px;
-  height: 40px;
-  padding: 0 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  height: 50px;
+  padding-left:15px;
+  border: none;
+  border-radius:25px 0 0 25px;
+
 }
 .searchForm > button {
   white-space: nowrap;
-  padding: 0 28px;
   border: none;
-  border-radius: 4px;
-  background: #0282b9;
-  color: white;
+  background: #fff;
   font-size: 16px;
+
+  border-radius: 0 30px 30px 0;
+}
+.searchForm > button:hover {
+  /*搜索按键在鼠标浮动时候的效果*/
+  cursor: pointer;
+  background: #ddd;
+}
+.searchForm  > button > img {
+  /*默认上下没居中，手动居中一下*/
+  width: 40px;
+  padding-right: 10px;
+  vertical-align: middle;
 }
 .globalMain {
   max-width: 500px;
@@ -86,6 +118,7 @@ body {
   position: relative;
   cursor: pointer;
 }
+
 .siteList .site > .logo {
   width: 64px;
   height: 64px;
@@ -135,8 +168,8 @@ body {
 }
 @media (min-width: 500px) {
   /* 媒体查询相当于if..else判断 -pc*/
-  .searchForm {
-    max-width: 700px;
+  .searchForm ,.searchList{
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -149,5 +182,13 @@ body {
   }
   .siteList > li {
     margin-right: 15px;
+  }
+}
+@media (max-width: 500px){
+  .searchForm {
+   margin: 0 15px;
+  }
+  .searchList{
+    margin: 0 20px;
   }
 }

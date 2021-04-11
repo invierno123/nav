@@ -12,7 +12,7 @@ const simplifyUrl=(url)=>{
 }
 
 
- const render = ()=>{
+ const render = (newChild, refChild)=>{
     $siteList.find('li:not(.last)').remove() 
     hashMap.forEach((node,index)=>{
      const $li = $(`<li>
@@ -25,7 +25,7 @@ const simplifyUrl=(url)=>{
              </svg>
              </div>
          </div>
-  </li>`).insertBefore($lastLi)
+  </li>`).insertBefore($lastLi, refChild)
   $li.on('click',()=>{
       window.open(node.url)
   })
@@ -37,7 +37,7 @@ const simplifyUrl=(url)=>{
  })
 }
 render()
- $('.addButton').on('click',()=>{
+$('.addButton').on('click',()=>{
     let url = window.prompt('请问你要添加的网址是什么？')
     if(url.indexOf('http'!==0)){
         url = 'https://' + url 
@@ -59,3 +59,16 @@ $(document).on('keypress',(e)=>{
         }
     }
 })
+$(".search:first-child").on("click", () => {
+  $("form").attr("action", "//www.bing.com/search");
+  $("input").attr("name", "q");
+  $(".search:nth-child(1)").attr("style", "color: black;");
+  $(".search:nth-child(2)").attr("style", "color: #fff;");
+});
+
+$(".search:nth-child(2)").on("click", () => {
+  $("form").attr("action", "//www.google.com/search");
+  $("input").attr("name", "q");
+  $(".search:nth-child(2)").attr("style", "color: black;");
+  $(".search:nth-child(1)").attr("style", "color: #fff;");
+});
