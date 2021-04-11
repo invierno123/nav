@@ -22,13 +22,18 @@ img {
   max-width: 100%;
 }
 body {
-  background-color: #eee;
+  background: url("images/img.png") no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 .globalHeader {
   margin: 20px;
 }
 .searchForm {
   display: flex;
+
   justify-content: space-between;
 }
 .siteList {
@@ -39,6 +44,7 @@ body {
 }
 
 .searchForm > input {
+  outline: none;
   width: 100%;
   margin-right: 10px;
   height: 40px;
