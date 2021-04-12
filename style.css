@@ -1,8 +1,5 @@
-/*css reset */
 * {
   box-sizing: border-box;
-}
-* {
   margin: 0;
   padding: 0;
 }
@@ -25,14 +22,14 @@ body {
   background: url("images/img_2.png") no-repeat;
   background-size: cover;
   height: 100vh;
-  margin: 0;
-  padding: 0;
+
 }
+body::-webkit-scrollbar {display:none}
+
 
 .search {
   /*百度和Google的样式设置*/
   width: 70px;
-
   text-align: center;
   line-height: 30px;
   font-weight: bold;
@@ -49,10 +46,7 @@ body {
 
   color: #fff;
 }
-.globalHeader {
-  margin-top: 20px;
 
-}
 .searchForm {
   display: flex;
   justify-content: space-between;
@@ -79,13 +73,13 @@ body {
   border: none;
   background: #fff;
   font-size: 16px;
-
   border-radius: 0 30px 30px 0;
 }
 .searchForm > button:hover {
   /*搜索按键在鼠标浮动时候的效果*/
   cursor: pointer;
   background: #ddd;
+
 }
 .searchForm  > button > img {
   /*默认上下没居中，手动居中一下*/
@@ -100,72 +94,107 @@ body {
 }
 
 .siteList > li {
-  margin-bottom: 10px;
-}
-.siteList .site {
-  /*注意.siteList和.site之间的空格*/
+  margin-bottom: 20px;
 
+}
+
+.siteList .site{
+  /*注意.siteList和.site之间的空格*/
+  display: flex;
   width: 100px;
   height: 100px;
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background: rgba(255, 255, 255, 0);
-
   border-radius: 4px;
   padding: 20px 0;
   position: relative;
   cursor: pointer;
 }
 
-.siteList .site > .logo {
-  width: 64px;
-  height: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.siteList .site >.siteHead>.logoWrapper>.siteWrapper>.logo {
+  width: 32px;
+  height: 32px;
   font-size: 52px;
   border: white solid 1px;
   border-radius: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: default;
+}
+.description {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #616161;
+  cursor: default;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.siteList .site>.siteHead >.logoWrapper{
+  background: white;
+  width: 100px;
+  height: 80px;
+  border-radius: 8px;
+  padding:15px 5px;
+
+}
+.siteList .site>.siteHead >.logoWrapper>.siteWrapper{
+  margin-left: 5px;
+  display: flex;
+}
+.hidden{
+  padding-left: 5px;
 }
 .siteList .site > .link {
   font-size: 14px;
-  margin-top: 4px;
+  margin-top: 5px;
+    color: white;
 }
+
 .siteList .site > .close {
   position: absolute;
-  right: 10px;
-  top: 5px;
+  right: 5px;
+  top: 2px;
+
   display: none;
+  color:  black;
 }
 .siteList .site:hover > .close {
   display: block;
   cursor: default;
 }
+
 .siteList .addButton {
   width: 100px;
   height: 100px;
-  background: rgba(255, 255, 255, 0);
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-size: 14px;
 }
+.siteList .addButton .text{
+  margin-top: 5px;
+}
 .siteList .addButton .icon {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+
 }
 .siteList .addButton .icon-wrapper {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height:80px;
   display: flex;
   justify-content: center;
   border: 1px solid white;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 100%;
 }
+
 @media (min-width: 500px) {
   /* 媒体查询相当于if..else判断 -pc*/
   .searchForm ,.searchList{
@@ -177,12 +206,14 @@ body {
     justify-content: flex-start;
     margin-left: 0;
   }
-  .globalHeader {
-    margin: 120px 0 60px;
-  }
   .siteList > li {
-    margin-right: 15px;
+    margin-left: 40px;
+    margin-right: 10px;
   }
+  .globalHeader {
+    margin: 75px 0 60px;
+  }
+
 }
 @media (max-width: 500px){
   .searchForm {
@@ -191,4 +222,5 @@ body {
   .searchList{
     margin: 0 20px;
   }
+
 }
