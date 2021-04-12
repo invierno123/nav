@@ -139,6 +139,8 @@ body::-webkit-scrollbar {display:none}
 }
 .description:hover{
   overflow: visible;
+  white-space:pre-wrap;
+  background: #dddddd;
 }
 .siteList .site>.siteHead >.logoWrapper{
   background: white;
@@ -158,6 +160,7 @@ body::-webkit-scrollbar {display:none}
   text-overflow: ellipsis;
 }
 .hidden:hover{
+  white-space: pre-wrap;
   overflow: visible;
 }
 .siteList .site > .link {
@@ -247,7 +250,7 @@ body::-webkit-scrollbar {display:none}
     display: block;
   }
   .icon {
-    width: 1.8em; height: 1.8em;
+    width: 1.6em; height: 1.6em;
   }
 
 }

@@ -3,8 +3,11 @@ const $lastLi = $siteList.find('li.last')
 const x = localStorage.getItem('x')
 const xObject = JSON.parse(x)
 const hashMap = xObject || [
+  {logo: '知乎', logoType: '记录学习的点滴', url: 'https://www.zhihu.com'},
+  {logo: 'Github', logoType: '程序员社区', url: 'https://github.com/'},
   {logo: '百度', logoType: '搜索引擎', url: 'https://www.baidu.com'},
-  {logo: 'B站', logoType: '视频网站', url: 'https://www.bilibili.com/'}
+  {logo: 'B站', logoType: '用来学习和追番的视频网站', url: 'https://www.bilibili.com/'},
+  {logo: 'GitBook', logoType: '前端工程师手册', url: 'https://www.gitbook.com/'}
 ]
 
 const simplifyUrl = (url) => {
@@ -69,6 +72,7 @@ $('.addButton').on('click', () => {
 window.onbeforeunload = () => {
   const string = JSON.stringify(hashMap)
   localStorage.setItem('x', string)
+  localStorage.clear()
 }
 
 $('.search:first-child').on('click', () => {

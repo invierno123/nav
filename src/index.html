@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>easy_search</title>
+    <link rel="shortcut icon" href="images/Snowy.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="globalHeader">
+        <ol class="searchList">
+            <li class="search">必应</li>
+            <li class="search">Google</li>
+        </ol>
+        <form method="get"
+        action="https://www.bing.com/"
+        >
+            <label class="searchForm" >
+                <input name='q' type="text" placeholder="请输入你要搜索的内容" >
+
+            <!--搜索关键字wd(word) -->
+            <button type="submit"><img src="images/search.svg" alt="search"></button>
+            </label>
+        </form>
+    </header>
+    <main class="globalMain">
+        <ul class="siteList">
+            <li class="last">
+                <div class="addButton">
+                    <div class="icon-wrapper">
+                        <svg class="icon" >
+                            <use xlink:href="#icon-jia"></use>
+                        </svg>
+                    </div>
+                        <div class="text">新增网站</div>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//at.alicdn.com/t/font_2184378_4il4zqkzyzm.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
