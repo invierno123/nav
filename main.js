@@ -74,13 +74,13 @@ window.onbeforeunload = () => {
 $('.search:first-child').on('click', () => {
   $('form').attr('action', '//www.bing.com/search')
   $('input').attr('name', 'q')
-  $('.search:nth-child(1)').attr('style', 'color: black;')
+  $('.search:nth-child(1)').attr('style', 'color: lightblue;')
   $('.search:nth-child(2)').attr('style', 'color: #fff;')
 })
 
 $('.search:nth-child(2)').on('click', () => {
   $('form').attr('action', '//www.google.com/search')
   $('input').attr('name', 'q')
-  $('.search:nth-child(2)').attr('style', 'color: black;')
+  $('.search:nth-child(2)').attr('style', 'color:lightblue;')
   $('.search:nth-child(1)').attr('style', 'color: #fff;')
 })
