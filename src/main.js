@@ -49,9 +49,13 @@ const render = (newChild, refChild) => {
       window.open(node.url)
     })
     $li.on('click', '.close', (e) => {
+     if (window.confirm('确定要删除这个网页吗？')){
       e.stopPropagation()
       hashMap.splice(index, 1)
-      render()
+       render()
+     }else{
+       return  e.stopPropagation()
+     }
     })
   })
 }
