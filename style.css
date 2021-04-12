@@ -111,8 +111,12 @@ body::-webkit-scrollbar {display:none}
   padding: 20px 0;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
+.siteList .site:hover{
+  overflow: visible;
+}
 .siteList .site >.siteHead>.logoWrapper>.siteWrapper>.logo {
   width: 32px;
   height: 32px;
@@ -121,7 +125,6 @@ body::-webkit-scrollbar {display:none}
   border-radius: 50%;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
   cursor: default;
 }
 .description {
@@ -132,6 +135,9 @@ body::-webkit-scrollbar {display:none}
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.description:hover{
+  overflow: visible;
 }
 .siteList .site>.siteHead >.logoWrapper{
   background: white;
@@ -147,11 +153,18 @@ body::-webkit-scrollbar {display:none}
 }
 .hidden{
   padding-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hidden:hover{
+  overflow: visible;
 }
 .siteList .site > .link {
   font-size: 14px;
   margin-top: 5px;
     color: white;
+
+
 }
 
 .siteList .site > .close {
