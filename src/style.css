@@ -249,8 +249,9 @@ body::-webkit-scrollbar {display:none}
   .close{
     display: block;
   }
-  .icon {
-    width: 1.6em; height: 1.6em;
+  .close>.icon {
+    width: 1.5em; height: 1.5em;
+    color: red;
   }
 
 }

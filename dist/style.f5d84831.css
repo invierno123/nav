@@ -249,10 +249,11 @@ body::-webkit-scrollbar {display:none}
   .close{
     display: block;
   }
-  .icon {
-    width: 1.6em; height: 1.6em;
+  .close>.icon {
+    width: 1.5em; height: 1.5em;
+    color: red;
   }
 
 }
 
-/*# sourceMappingURL=style.af6fe4fd.css.map */
+/*# sourceMappingURL=style.f5d84831.css.map */
