@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+body {
+  background: url("img_2.db3117ea.png") no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+body::-webkit-scrollbar {display:none}
+
+
+.search {
+  /*百度和Google的样式设置*/
+  width: 70px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.searchList {
+  display: flex;
+
+}
+.search:first-child {
+  color: lightblue;
+}
+.search:nth-child(2) {
+
+  color: #fff;
+}
+
+.searchForm {
+  display: flex;
+  justify-content: space-between;
+
+}
+.siteList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.searchForm > input {
+  outline: none;
+  width: 100%;
+  height: 50px;
+  padding-left:15px;
+  border: none;
+  border-radius:25px 0 0 25px;
+
+}
+.searchForm > button {
+  white-space: nowrap;
+  border: none;
+  background: #fff;
+  font-size: 16px;
+  border-radius: 0 30px 30px 0;
+}
+.searchForm > button:hover {
+  /*搜索按键在鼠标浮动时候的效果*/
+  cursor: pointer;
+  background: #ddd;
+
+}
+.searchForm  > button > img {
+  /*默认上下没居中，手动居中一下*/
+  width: 40px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.globalMain {
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.siteList > li {
+  margin-bottom: 20px;
+
+}
+
+.siteList .site{
+  /*注意.siteList和.site之间的空格*/
+  display: flex;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 4px;
+  padding: 20px 0;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.siteList .site:hover{
+  overflow: visible;
+}
+.siteList .site >.siteHead>.logoWrapper>.siteWrapper>.logo {
+  width: 32px;
+  height: 32px;
+  font-size: 52px;
+  border: white solid 1px;
+  border-radius: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: default;
+}
+.description {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #616161;
+  cursor: default;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.description:hover{
+  overflow: visible;
+  white-space:pre-wrap;
+  background: #dddddd;
+}
+.siteList .site>.siteHead >.logoWrapper{
+  background: white;
+  width: 100px;
+  height: 80px;
+  border-radius: 12px;
+  padding:15px 5px;
+
+}
+.siteList .site>.siteHead >.logoWrapper>.siteWrapper{
+  margin-left: 5px;
+  display: flex;
+}
+.hidden{
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hidden:hover{
+  white-space: pre-wrap;
+  overflow: visible;
+}
+.siteList .site > .link {
+  font-size: 14px;
+  margin-top: 5px;
+    color: white;
+}
+
+.siteList .site > .close {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  color:  black;
+}
+
+.siteList .site:hover > .close {
+  display: block;
+  cursor: default;
+}
+.siteList .site > .close >.icon {
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.siteList .addButton {
+  width: 100px;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+}
+.siteList .addButton .text{
+  margin-top: 5px;
+}
+.siteList .addButton .icon {
+  width: 40px;
+  height: 40px;
+
+}
+.siteList .addButton .icon-wrapper {
+  width: 80px;
+  height:80px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+  align-items: center;
+  border-radius: 100%;
+}
+
+@media (min-width: 500px) {
+  /* 媒体查询相当于if..else判断 -pc*/
+  .searchForm ,.searchList{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .icon {
+    width: 1.2em; height: 1.2em;
+  }
+  .siteList {
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+  .siteList > li {
+    margin-left: 40px;
+    margin-right: 10px;
+  }
+  .globalHeader {
+    margin: 75px 0 60px;
+  }
+  .close{
+    display: none;
+  }
+
+}
+@media (max-width: 500px){
+  .searchForm {
+   margin: 0 15px;
+  }
+  .searchList{
+    margin: 0 20px;
+  }
+  .close{
+    display: block;
+  }
+  .icon {
+    width: 1.6em; height: 1.6em;
+  }
+
+}
+
+/*# sourceMappingURL=style.af6fe4fd.css.map */
