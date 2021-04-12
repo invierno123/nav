@@ -21,8 +21,9 @@ img {
 body {
   background: url("images/img_2.png") no-repeat;
   background-size: cover;
-  height: 100vh;
-
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 body::-webkit-scrollbar {display:none}
 
@@ -143,7 +144,7 @@ body::-webkit-scrollbar {display:none}
   background: white;
   width: 100px;
   height: 80px;
-  border-radius: 8px;
+  border-radius: 12px;
   padding:15px 5px;
 
 }
@@ -163,23 +164,24 @@ body::-webkit-scrollbar {display:none}
   font-size: 14px;
   margin-top: 5px;
     color: white;
-
-
 }
 
 .siteList .site > .close {
   position: absolute;
   right: 5px;
   top: 2px;
-
-  display: none;
   color:  black;
 }
+
 .siteList .site:hover > .close {
   display: block;
   cursor: default;
 }
-
+.siteList .site > .close >.icon {
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 .siteList .addButton {
   width: 100px;
   height: 100px;
@@ -215,6 +217,9 @@ body::-webkit-scrollbar {display:none}
     margin-left: auto;
     margin-right: auto;
   }
+  .icon {
+    width: 1.2em; height: 1.2em;
+  }
   .siteList {
     justify-content: flex-start;
     margin-left: 0;
@@ -226,6 +231,9 @@ body::-webkit-scrollbar {display:none}
   .globalHeader {
     margin: 75px 0 60px;
   }
+  .close{
+    display: none;
+  }
 
 }
 @media (max-width: 500px){
@@ -234,6 +242,12 @@ body::-webkit-scrollbar {display:none}
   }
   .searchList{
     margin: 0 20px;
+  }
+  .close{
+    display: block;
+  }
+  .icon {
+    width: 1.8em; height: 1.8em;
   }
 
 }

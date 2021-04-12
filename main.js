@@ -70,14 +70,7 @@ window.onbeforeunload = () => {
   const string = JSON.stringify(hashMap)
   localStorage.setItem('x', string)
 }
-$(document).on('keypress', (e) => {
-  const {key} = e//const key=e.key
-  for (let i = 0; i < hashMap.length; i++) {
-    if (hashMap[i].logo.toLowerCase() === key) {
-      window.open(hashMap[i].url)
-    }
-  }
-})
+
 $('.search:first-child').on('click', () => {
   $('form').attr('action', '//www.bing.com/search')
   $('input').attr('name', 'q')
